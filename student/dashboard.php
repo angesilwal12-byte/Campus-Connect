@@ -10,7 +10,7 @@ if ($_SESSION["role"] !== "student") {
 }
 
 // Temporary fallback until we confirm your database column
-$studentName = $_SESSION["name"] ?? "Student";
+$studentName = $_SESSION["full_name"] ?? "Student";
 
 ?>
 
