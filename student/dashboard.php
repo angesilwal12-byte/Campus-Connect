@@ -53,7 +53,8 @@ $studentName = $_SESSION["full_name"] ?? "Student";
 
                 <h1>
                     Welcome back,
-                    <?php echo htmlspecialchars($studentName); ?> 👋
+                    <?php echo htmlspecialchars($studentName); ?> 
+                    <img src="../assets/icon/hello.svg" alt="Hello" class="hello-image">
                 </h1>
 
                 <p class="welcome-text">

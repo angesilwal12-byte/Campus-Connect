@@ -151,7 +151,10 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-
+.hello-image{
+  height: 40px;
+  width: 100px;
+}
 /* =========================
    ACTION CARDS
 ========================= */
