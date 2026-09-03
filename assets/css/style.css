@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f3f8;
+  background: #F5F5F5;
   color: #1f1f1f;
 }
 
@@ -49,8 +49,7 @@ body {
 ========================= */
 
 .student-dashboard {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 80%;
   padding: 50px 24px 80px;
 }
 

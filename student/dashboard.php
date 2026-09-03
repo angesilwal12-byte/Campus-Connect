@@ -26,12 +26,15 @@ $studentName = $_SESSION["full_name"] ?? "Student";
     <title>Student Dashboard | Campus Connect</title>
 
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/admin.css">
 
 </head>
 
 <body>
 
     <?php require_once __DIR__ . "/../includes/navbar.php"; ?>
+    <div class="layout">
+    <?php require_once __DIR__ . "/../includes/sidebar.php"; ?>
 
 
     <main class="student-dashboard">
@@ -350,9 +353,7 @@ $studentName = $_SESSION["full_name"] ?? "Student";
 
 
     </main>
-
-
-    <?php require_once __DIR__ . "/../includes/footer.php"; ?>
+</div>
 
 </body>
 
