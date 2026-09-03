@@ -6,7 +6,9 @@
         <a href="/Campus_Connect/notices/index.php">Notices</a>
         <a href="/Campus_Connect/auth/logout.php">Logout</a>
     <?php else: ?>
+        <div>
         <a href="/Campus_Connect/auth/login.php">Login</a>
         <a href="/Campus_Connect/auth/register.php">Register</a>
+        </div>
     <?php endif; ?>
 </nav>
