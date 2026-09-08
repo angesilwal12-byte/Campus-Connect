@@ -13,6 +13,10 @@
             Notices
         </a>
 
+        <a href="cr_election.php">
+            CR Voting
+        </a>
+
         <a href="settings.php">
             Settings
         </a>
