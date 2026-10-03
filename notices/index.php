@@ -110,6 +110,13 @@ if ($filter === "All") {
                                     <i class="ti <?php echo $icons[$cat] ?? 'ti-speakerphone'; ?>"></i><?php echo $cat; ?>
                                 </span>
                                 <span><i class="ti ti-user"></i><?php echo htmlspecialchars($n["full_name"]); ?></span>
+                                 <?php if ($role === "admin"): ?>
+        <form method="POST" action="/Campus_Connect/notices/delete.php" class="nt-delete-form"
+              onsubmit="return confirm('Delete this notice? This cannot be undone.');">
+            <input type="hidden" name="id" value="<?php echo (int) $n["id"]; ?>">
+            <button type="submit" class="nt-delete"><i class="ti ti-trash"></i>Delete</button>
+        </form>
+    <?php endif; ?>
                             </div>
                         </div>
                     </article>

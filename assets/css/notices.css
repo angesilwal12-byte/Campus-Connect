@@ -275,3 +275,33 @@
 .nt-header p {
   text-align: left;
 }
+/* ===== admin delete button ===== */
+.nt-delete-form {
+  margin: 0 0 0 auto;
+}
+
+.nt-delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #fff;
+  color: #b42318;
+  border: 1px solid #f3c1bd;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nt-delete:hover {
+  background: #b42318;
+  border-color: #b42318;
+  color: #fff;
+}
+
+.nt-delete i {
+  font-size: 15px;
+}
