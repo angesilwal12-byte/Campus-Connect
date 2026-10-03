@@ -1,0 +1,93 @@
+/* ===== stat cards (teacher and admin) ===== */
+.cc-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.cc-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.cc-stat > i {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eeedfe;
+  color: #534ab7;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.cc-stat strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.1;
+  color: #1e1b4b;
+}
+
+.cc-stat span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== quick action cards ===== */
+.cc-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.cc-action {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cc-action:hover {
+  border-color: #c7c9f5;
+  box-shadow: 0 6px 18px rgba(83, 74, 183, 0.1);
+  transform: translateY(-2px);
+}
+
+.cc-action > i {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #534ab7;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 22px;
+}
+
+.cc-action h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #111827;
+}
+
+.cc-action p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+}

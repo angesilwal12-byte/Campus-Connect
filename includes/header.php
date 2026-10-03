@@ -10,5 +10,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Connect</title>
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
+    <?php if (isset($page_css)): ?>
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/<?php echo $page_css; ?>">
+<?php endif; ?>
 </head>
 <body>

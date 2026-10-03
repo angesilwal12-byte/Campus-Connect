@@ -1,0 +1,168 @@
+.cc-main {
+  padding: 32px 36px;
+  background: #f5f5f7;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.cc-greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 30px;
+  color: #1e1b4b;
+}
+
+.cc-hello {
+  height: 28px;
+  width: auto;
+}
+
+.cc-subtitle {
+  margin: 4px 0 24px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* election banner */
+.cc-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  background: #eef0ff;
+  border: 1px solid #c7c9f5;
+  border-radius: 14px;
+}
+
+.cc-banner > i {
+  font-size: 28px;
+  color: #534ab7;
+}
+
+.cc-banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cc-banner-text strong {
+  color: #3c3489;
+  font-size: 16px;
+}
+
+.cc-banner-text span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.cc-banner-btn {
+  padding: 10px 20px;
+  background: #534ab7;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cc-banner-btn:hover {
+  background: #3c3489;
+}
+
+/* two columns */
+.cc-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.cc-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.cc-section-head h2 {
+  margin: 0;
+  font-size: 17px;
+  color: #111827;
+}
+
+.cc-section-head a {
+  font-size: 13px;
+  color: #534ab7;
+  text-decoration: none;
+}
+
+.cc-section-head a:hover {
+  text-decoration: underline;
+}
+
+.cc-list {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* use these classes later when real notices and notes exist */
+.cc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.cc-item:last-child {
+  border-bottom: none;
+}
+
+.cc-item-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cc-item-meta {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.cc-empty {
+  padding: 36px 20px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.cc-empty i {
+  font-size: 28px;
+}
+
+.cc-empty p {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+/* phones and small screens */
+@media (max-width: 800px) {
+  .cc-main {
+    padding: 20px 16px;
+  }
+
+  .cc-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-banner {
+    flex-wrap: wrap;
+  }
+}
