@@ -1,0 +1,109 @@
+.cc-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.cc-layout > main {
+  flex: 1;
+  min-width: 0;
+}
+
+.cc-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 12px;
+  background: #534ab7;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.cc-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 24px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cc-brand i {
+  font-size: 24px;
+}
+
+.cc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cc-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: #cecbf6;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cc-nav a i {
+  font-size: 19px;
+}
+
+.cc-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.cc-nav a.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 600;
+}
+
+.cc-user {
+  margin-top: auto;
+  padding: 14px 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cc-user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.cc-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #cecbf6;
+  color: #3c3489;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cc-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: #cecbf6;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.cc-logout:hover {
+  color: #fff;
+}

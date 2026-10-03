@@ -13,6 +13,14 @@ $message = "";
 $msg_type = "";
 $already_voted = false;
 $candidates = null;
+function getInitials($name) {
+    $parts = preg_split('/\s+/', trim($name));
+    $initials = strtoupper(substr($parts[0], 0, 1));
+    if (count($parts) > 1) {
+        $initials .= strtoupper(substr(end($parts), 0, 1));
+    }
+    return $initials;
+}
 
 // find the open election
 $result = $conn->query("SELECT * FROM elections WHERE status='open' LIMIT 1");
@@ -74,25 +82,23 @@ if ($election) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR Election | Campus Connect</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/admin.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/cr_election.css">
 </head>
 <body>
 
-<?php require_once __DIR__ . "/../includes/navbar.php"; ?>
-
-<div class="layout">
+<div class="cc-layout">
     <?php require_once __DIR__ . "/../includes/sidebar.php"; ?>
 
     <main class="student-dashboard">
         <div class="vote-container">
-
-            <h2 class="vote-title">CR Election</h2>
-            <?php if ($election): ?>
-                <p class="vote-sub"><?= htmlspecialchars($election["title"]) ?> &bull; <?= htmlspecialchars($election["semester"]) ?></p>
-            <?php endif; ?>
-
+<h2 class="vote-title">CR Election</h2>
+<?php if ($election): ?>
+    <p class="vote-sub"><?= htmlspecialchars($election["title"]) ?> &bull; <?= htmlspecialchars($election["semester"]) ?></p>
+<?php endif; ?>
             <?php if ($message): ?>
                 <div class="alert alert-<?= $msg_type ?>"><?= htmlspecialchars($message) ?></div>
             <?php endif; ?>
@@ -104,13 +110,13 @@ if ($election) {
                 <div class="vote-empty">You have already voted in this election. &#10003;</div>
 
             <?php else: ?>
-                <form method="POST" class="vote-form">
+             <form method="POST" class="vote-form" onsubmit="return confirm('Are you sure? You can only vote once and cannot change your vote later.');">
                     <div class="candidate-list">
                         <?php while ($c = $candidates->fetch_assoc()): ?>
                             <label class="candidate-card">
                                 <input type="radio" name="candidate_id" value="<?= $c["id"] ?>" required>
                                 <div class="candidate-body">
-                                    <div class="candidate-avatar"><?= strtoupper(substr($c["name"], 0, 1)) ?></div>
+                                   <div class="candidate-avatar"><?= htmlspecialchars(getInitials($c["name"])) ?></div>
                                     <div class="candidate-info">
                                         <h3><?= htmlspecialchars($c["name"]) ?></h3>
                                         <p><?= htmlspecialchars($c["manifesto"]) ?></p>

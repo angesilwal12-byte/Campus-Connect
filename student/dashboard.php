@@ -27,13 +27,12 @@ $studentName = $_SESSION["full_name"] ?? "Student";
 
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/admin.css">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
 </head>
 
 <body>
-
-    <?php require_once __DIR__ . "/../includes/navbar.php"; ?>
-    <div class="layout">
+   <div class="cc-layout">
     <?php require_once __DIR__ . "/../includes/sidebar.php"; ?>
 
 

@@ -190,3 +190,24 @@
     font-size: 17px;
   }
 }
+.vote-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.vote-header .vote-title {
+  margin: 0;
+}
+
+.vote-badge {
+  background: #e6f7ec;
+  color: #1a7f3c;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
