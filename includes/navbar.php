@@ -4,6 +4,11 @@
         <span><?php echo htmlspecialchars($_SESSION["full_name"]); ?> (<?php echo htmlspecialchars($_SESSION["role"]); ?>)</span>
         <a href="/Campus_Connect/notes/index.php">Notes</a>
         <a href="/Campus_Connect/notices/index.php">Notices</a>
+
+        <?php if ($_SESSION["role"] === "student"): ?>
+            <a href="/Campus_Connect/student/cr_election.php">CR Voting</a>
+        <?php endif; ?>
+
         <a href="/Campus_Connect/auth/logout.php">Logout</a>
     <?php else: ?>
         <div>

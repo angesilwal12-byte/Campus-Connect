@@ -224,6 +224,29 @@ $studentName = $_SESSION["full_name"] ?? "Student";
 
                 </a>
 
+                <a href="/Campus_Connect/student/cr_election.php" class="action-card">
+
+    <div class="action-icon">
+        🗳️
+    </div>
+
+    <div class="action-content">
+
+        <h3>
+            CR Voting
+        </h3>
+
+        <p>
+            Cast your anonymous vote for class representative.
+        </p>
+
+    </div>
+
+    <span class="action-arrow">
+        →
+    </span>
+
+</a>
 
                 <a href="#" class="action-card">
 
