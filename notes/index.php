@@ -117,6 +117,13 @@ function file_kind($file_name) {
                             <a href="/Campus_Connect/notes/download.php?id=<?php echo (int) $n["id"]; ?>" class="nb-download">
                                 <i class="ti ti-download"></i>Download
                             </a>
+                            <?php if ($role === "admin"): ?>
+    <form method="POST" action="/Campus_Connect/notes/delete.php" class="nb-delete-form"
+          onsubmit="return confirm('Delete these notes? The file will be removed for good.');">
+        <input type="hidden" name="id" value="<?php echo (int) $n["id"]; ?>">
+        <button type="submit" class="nb-delete"><i class="ti ti-trash"></i>Delete</button>
+    </form>
+<?php endif; ?>
                         </article>
                     <?php endwhile; ?>
                 <?php else: ?>
