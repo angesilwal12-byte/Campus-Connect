@@ -36,6 +36,11 @@ function cc_active($needle) {
                 <i class="ti ti-checkbox"></i>Vote
             </a>
         <?php endif; ?>
+        <?php if ($cc_role === "admin"): ?>
+    <a href="/Campus_Connect/admin/election.php" class="<?php echo cc_active('/admin/election'); ?>">
+        <i class="ti ti-checkbox"></i>Election
+    </a>
+<?php endif; ?>
     </nav>
 
     <div class="cc-user">

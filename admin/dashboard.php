@@ -105,10 +105,18 @@ $total_notices = $res ? $res->fetch_assoc()["total"] : 0;
                     <p>See everything on the notice board.</p>
                 </div>
             </a>
+            <a href="/Campus_Connect/admin/election.php" class="cc-action">
+    <i class="ti ti-checkbox"></i>
+    <div>
+        <h3>Manage election</h3>
+        <p>Create the CR election, add candidates and see results.</p>
+    </div>
+</a>
         </div>
+        
 
     </main>
 </div>
 
 </body>
-</html>
+</html> 

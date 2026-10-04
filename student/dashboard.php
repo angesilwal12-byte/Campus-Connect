@@ -24,6 +24,10 @@ if ($election) {
     $stmt->execute();
     $show_election_banner = $stmt->get_result()->num_rows === 0;
 }
+// latest 3 notices for the dashboard box
+$latest_notices = $conn->query(
+    "SELECT id, title, category, created_at FROM notices ORDER BY created_at DESC LIMIT 3"
+);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,12 +70,29 @@ if ($election) {
                     <h2>Latest notices</h2>
                     <a href="/Campus_Connect/notices/index.php">See all</a>
                 </div>
-                <div class="cc-list">
-                    <div class="cc-empty">
-                        <i class="ti ti-bell"></i>
-                        <p>No notices yet. New announcements will show up here.</p>
-                    </div>
-                </div>
+             <div class="cc-list">
+    <?php if ($latest_notices && $latest_notices->num_rows > 0): ?>
+        <?php while ($n = $latest_notices->fetch_assoc()): ?>
+          <?php $ts = strtotime($n["created_at"]); ?>
+<a href="/Campus_Connect/notices/index.php" class="cc-item">
+    <div class="cc-tile cat-<?php echo strtolower($n["category"]); ?>">
+        <span class="cc-tile-day"><?php echo date("d", $ts); ?></span>
+        <span class="cc-tile-month"><?php echo date("M", $ts); ?></span>
+    </div>
+    <div class="cc-item-text">
+        <p class="cc-item-title"><?php echo htmlspecialchars($n["title"]); ?></p>
+        <p class="cc-item-meta"><?php echo htmlspecialchars($n["category"]); ?></p>
+    </div>
+    <i class="ti ti-chevron-right"></i>
+</a>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <div class="cc-empty">
+            <i class="ti ti-bell"></i>
+            <p>No notices yet. New announcements will show up here.</p>
+        </div>
+    <?php endif; ?>
+</div>
             </section>
 
             <section>
