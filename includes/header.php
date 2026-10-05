@@ -12,6 +12,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <?php if (isset($page_css)): ?>
     <link rel="stylesheet" href="/Campus_Connect/assets/css/<?php echo $page_css; ?>">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
+
 <?php endif; ?>
 </head>
 <body>

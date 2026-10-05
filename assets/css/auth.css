@@ -17,7 +17,7 @@ body {
 .nav > a:first-child {
   font-size: 20px;
   font-weight: 700;
-  color: #534ab7;
+  color: #1f5e54;
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .nav div a {
-  color: #534ab7;
+  color: #1f5e54;
   font-weight: 600;
   text-decoration: none;
 }

@@ -43,8 +43,10 @@ $total_notices = $res ? $res->fetch_assoc()["total"] : 0;
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/dashboard.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/tdashboard.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
+
 </head>
-<body>
+<body >
 
 <div class="cc-layout">
     <?php require_once __DIR__ . "/../includes/sidebar.php"; ?>

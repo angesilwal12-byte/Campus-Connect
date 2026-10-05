@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/notices.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/tnotices.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
+
 </head>
 <body>
 

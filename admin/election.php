@@ -161,6 +161,8 @@ $status = $current["status"] ?? "";
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/election.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
+
 </head>
 <body>
 
