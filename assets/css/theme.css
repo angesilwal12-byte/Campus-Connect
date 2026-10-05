@@ -1,0 +1,661 @@
+/* ===== Campus Connect: Teal mist theme =====
+   Link this file LAST on every page.
+   To re-theme the whole app, change the variables below. */
+:root {
+  --c-bg: #f0f9f7;
+  --c-soft: #d9f0eb;
+  --c-softer: #e6f4f0;
+  --c-border: #bfe5dd;
+  --c-primary: #3fa796;
+  --c-primary-dark: #2f8a7b;
+  --c-accent: #8fd3c5;
+  --c-blob: #4fb8a3;
+  --c-text: #1f5e54;
+  --c-text-mid: #2f7a6c;
+  --c-rgb: 31, 94, 84;
+  --c-ring: rgba(63, 167, 150, 0.2);
+  --c-hero-1: #8fd3c5;
+  --c-hero-2: #c6ebe3;
+  --c-hero-3: #e8f8f4;
+}
+
+/* ----- base ----- */
+body,
+.cc-main,
+.nt-main,
+.nb-main,
+.el-main,
+.student-dashboard {
+  background: var(--c-bg);
+}
+
+.cc-layout {
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.cc-main > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- sidebar ----- */
+.cc-sidebar {
+  background: var(--c-soft);
+  color: var(--c-text);
+}
+
+.cc-brand {
+  color: var(--c-text);
+}
+
+.cc-nav a {
+  color: var(--c-text-mid);
+}
+
+.cc-nav a:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--c-text);
+}
+
+.cc-nav a.active {
+  background: #fff;
+  color: var(--c-text);
+  box-shadow: 0 1px 4px rgba(var(--c-rgb), 0.12);
+}
+
+.cc-user {
+  border-top: 1px solid rgba(var(--c-rgb), 0.18);
+}
+
+.cc-user-row {
+  color: var(--c-text);
+}
+
+.cc-avatar {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+.cc-logout {
+  color: var(--c-text-mid);
+}
+
+.cc-logout:hover {
+  color: var(--c-text);
+}
+
+/* ----- headings ----- */
+.nt-header h1,
+.nb-header h1,
+.el-header h1,
+.vote-title,
+.auth-card h1 {
+  color: var(--c-text);
+}
+
+.nt-header p,
+.nb-header p,
+.el-header p,
+.vote-sub {
+  color: var(--c-text-mid);
+}
+
+/* ----- primary buttons ----- */
+.nt-post-btn,
+.nb-upload-btn,
+.el-btn,
+.nt-submit,
+.nb-submit,
+.btn-vote,
+.auth-card button,
+.cc-banner-btn,
+.cb-btn {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+.nt-post-btn:hover,
+.nb-upload-btn:hover,
+.el-btn:hover,
+.nt-submit:hover,
+.nb-submit:hover,
+.btn-vote:hover,
+.auth-card button:hover,
+.cc-banner-btn:hover,
+.cb-btn:hover {
+  background: var(--c-primary-dark);
+}
+
+.btn-vote:hover {
+  box-shadow: 0 6px 16px var(--c-ring);
+}
+
+.el-btn:disabled {
+  background: #d1d5db;
+  color: #fff;
+}
+
+/* ----- filter chips ----- */
+.nt-chips a,
+.nb-chips a {
+  background: #fff;
+  border-color: var(--c-border);
+  color: var(--c-text-mid);
+}
+
+.nt-chips a:hover,
+.nb-chips a:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+.nt-chips a.active,
+.nb-chips a.active {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: #fff;
+}
+
+/* ----- links and small accents ----- */
+.nt-back,
+.nb-back,
+.nt-more summary,
+.el-current,
+.cc-section-head a,
+.auth-footer a {
+  color: var(--c-primary-dark);
+}
+
+.nb-download {
+  color: var(--c-primary-dark);
+  border-color: var(--c-border);
+}
+
+.nb-download:hover {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: #fff;
+}
+
+.nt-new {
+  background: var(--c-primary);
+}
+
+.nb-subject {
+  background: var(--c-soft);
+  color: var(--c-text);
+}
+
+.nt-more p {
+  background: var(--c-softer);
+}
+
+/* ----- cards ----- */
+.nt-card,
+.nb-card,
+.el-card,
+.nt-form,
+.nb-form,
+.cc-stat,
+.cc-action {
+  border-color: var(--c-border);
+}
+
+.nt-card:hover,
+.nb-card:hover,
+.cc-action:hover {
+  border-color: var(--c-accent);
+  box-shadow: 0 6px 18px rgba(var(--c-rgb), 0.12);
+}
+
+/* category tile: "General" turns teal (others keep red, green, amber) */
+.nt-date.cat-general,
+.cc-tile.cat-general {
+  background: var(--c-soft);
+  color: var(--c-text-mid);
+}
+
+.cat-general-text {
+  color: var(--c-primary-dark);
+}
+
+/* ----- teacher and admin dashboards ----- */
+.cc-stat > i {
+  background: var(--c-soft);
+  color: var(--c-text);
+}
+
+.cc-stat strong {
+  color: var(--c-text);
+}
+
+.cc-action > i {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+/* ----- admin election page ----- */
+.el-avatar {
+  background: var(--c-primary);
+}
+
+.el-turnout strong {
+  color: var(--c-primary);
+}
+
+.el-bar {
+  background: var(--c-soft);
+}
+
+.el-bar-fill {
+  background: var(--c-accent);
+}
+
+.el-result.winner .el-bar-fill {
+  background: var(--c-primary);
+}
+
+/* ----- student voting page ----- */
+.candidate-avatar {
+  background: var(--c-primary);
+}
+
+.candidate-card:hover .candidate-body {
+  border-color: var(--c-accent);
+  box-shadow: 0 6px 16px rgba(var(--c-rgb), 0.12);
+}
+
+.candidate-card input[type="radio"]:checked + .candidate-body {
+  border-color: var(--c-primary);
+  background: var(--c-softer);
+  box-shadow: 0 0 0 4px var(--c-ring);
+}
+
+.candidate-card input[type="radio"]:checked + .candidate-body::after {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+}
+
+.candidate-card input[type="radio"]:focus-visible + .candidate-body {
+  outline-color: var(--c-primary);
+}
+
+/* ----- form focus rings ----- */
+.nt-form input:focus,
+.nt-form select:focus,
+.nt-form textarea:focus,
+.nb-form input[type="text"]:focus,
+.nb-form select:focus,
+.el-form input:focus,
+.el-form textarea:focus,
+.auth-card input:focus,
+.auth-card select:focus {
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px var(--c-ring);
+}
+
+/* ----- login and register ----- */
+.nav {
+  border-bottom-color: var(--c-border);
+}
+
+.nav > a:first-child,
+.nav div a {
+  color: var(--c-primary-dark);
+}
+
+.auth-card {
+  border-color: var(--c-border);
+  box-shadow: 0 10px 30px rgba(var(--c-rgb), 0.1);
+}
+
+/* ----- hero: gradient with blurry blobs ----- */
+.cc-hero {
+  background: linear-gradient(
+    135deg,
+    var(--c-hero-1) 0%,
+    var(--c-hero-2) 52%,
+    var(--c-hero-3) 100%
+  );
+  color: var(--c-text);
+  padding: 26px;
+  border-radius: 24px;
+}
+
+.cc-hero::before {
+  width: 240px;
+  height: 240px;
+  top: -80px;
+  left: -40px;
+  right: auto;
+  background: var(--c-blob);
+  opacity: 0.55;
+  filter: blur(40px);
+}
+
+.cc-hero::after {
+  width: 170px;
+  height: 170px;
+  bottom: -60px;
+  right: 160px;
+  background: #ffd9b8;
+  opacity: 0.75;
+  filter: blur(36px);
+}
+
+.cc-blob {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #d9ccf2;
+  opacity: 0.7;
+  filter: blur(32px);
+}
+
+/* the glass card */
+.cc-glass {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.38);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 28px rgba(var(--c-rgb), 0.12);
+}
+
+.cc-glass-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cc-glass-art {
+  flex-shrink: 0;
+  width: 170px;
+  height: auto;
+}
+
+.cc-chip {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--c-text-mid);
+}
+
+.cc-hero-hello,
+.cc-hero-sub {
+  color: var(--c-text-mid);
+}
+
+.cc-hero-name {
+  color: var(--c-text);
+  font-size: 52px;
+}
+
+.cc-hero-news {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid var(--c-primary);
+  color: var(--c-text);
+}
+
+/* ----- election banner on the student dashboard ----- */
+.cb-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding: 16px 20px;
+  border: 1px solid var(--c-border);
+  border-radius: 20px;
+}
+
+.cb-banner.open {
+  background: linear-gradient(
+    135deg,
+    var(--c-hero-2),
+    rgba(255, 255, 255, 0.85)
+  );
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 20px rgba(var(--c-rgb), 0.1);
+}
+
+.cb-banner.voted {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.cb-banner.closed {
+  background: rgba(255, 255, 255, 0.6);
+  border-style: dashed;
+}
+
+.cb-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--c-primary);
+  font-size: 26px;
+  box-shadow: 0 1px 5px rgba(var(--c-rgb), 0.15);
+}
+
+.cb-icon.done {
+  background: var(--c-soft);
+  color: var(--c-text);
+  box-shadow: none;
+}
+
+.cb-icon.muted {
+  background: #f1f1f4;
+  color: #6b7280;
+  box-shadow: none;
+}
+
+.cb-pulse {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e24b4a;
+  animation: cb-pulse 1.8s infinite;
+}
+
+@keyframes cb-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(226, 75, 74, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(226, 75, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(226, 75, 74, 0);
+  }
+}
+
+.cb-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cb-text strong {
+  font-size: 16px;
+  color: var(--c-text);
+}
+
+.cb-text span {
+  font-size: 13px;
+  color: var(--c-text-mid);
+}
+
+.cb-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cb-bar {
+  flex: 1;
+  max-width: 220px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+.cb-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--c-primary);
+}
+
+.cb-progress em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--c-text);
+}
+
+.cb-btn {
+  flex-shrink: 0;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.cb-btn.ghost {
+  background: #fff;
+  color: var(--c-text);
+  border: 1px solid var(--c-border);
+}
+
+.cb-btn.ghost:hover {
+  background: var(--c-bg);
+}
+
+.cb-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  background: var(--c-soft);
+  color: var(--c-text);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ----- notice and note lists on the student dashboard ----- */
+.cc-section-head h2 {
+  color: var(--c-text);
+}
+
+.cc-list {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--c-border);
+}
+
+a.cc-item {
+  border-bottom: 1px solid var(--c-softer);
+}
+
+a.cc-item:hover {
+  background: var(--c-bg);
+}
+
+a.cc-item:hover > i {
+  color: var(--c-primary);
+}
+
+/* ----- subject cards: teal theme, still a variety of colors ----- */
+.sj-section {
+  --sj-accent: var(--c-primary);
+  --sj-dark: var(--c-text);
+  --sj-soft: var(--c-text-mid);
+  --sj-all-bg: var(--c-soft);
+  --sj-all-border: var(--c-accent);
+}
+
+.sj-card {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(var(--c-rgb), 0.08);
+}
+
+.sj-card > i {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+}
+
+.sj-all {
+  border: 1.5px dashed var(--c-accent);
+}
+
+/* ----- safety net for browsers without the glass blur ----- */
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  .cc-glass {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .cb-banner.open {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* ----- phones ----- */
+@media (max-width: 800px) {
+  .cc-glass {
+    padding: 22px 20px;
+  }
+
+  .cc-glass-art {
+    display: none;
+  }
+
+  .cc-hero-name {
+    font-size: 40px;
+  }
+
+  .cb-banner {
+    flex-wrap: wrap;
+  }
+}
+/* space above the "Your subjects" section */
+.sj-section {
+  margin-top: 100px;
+}
+
+@media (max-width: 800px) {
+  .sj-section {
+    margin-top: 32px;
+  }
+}
+.cc-columns {
+  margin-top: 70px;
+}

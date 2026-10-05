@@ -61,6 +61,7 @@ function file_kind($file_name) {
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/notes.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
 </head>
 <body>
 

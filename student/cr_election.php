@@ -87,6 +87,7 @@ if ($election) {
     <link rel="stylesheet" href="/Campus_Connect/assets/css/admin.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/cr_election.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
 </head>
 <body>
 

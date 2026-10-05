@@ -13,7 +13,7 @@ $icons = [
     "General" => "ti-speakerphone"
 ];
 
-// which filter chip is active
+// which filter tag is active
 $filter = $_GET["category"] ?? "All";
 if (!in_array($filter, $categories, true)) {
     $filter = "All";
@@ -36,6 +36,9 @@ if ($filter === "All") {
     $stmt->execute();
     $result = $stmt->get_result();
 }
+
+$total = $result ? $result->num_rows : 0;
+$sub   = $total === 0 ? "Nothing pinned up yet" : ($total === 1 ? "1 notice pinned up" : $total . " notices pinned up");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,91 +47,99 @@ if ($filter === "All") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notices | Campus Connect</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/style.css">
     <link rel="stylesheet" href="/Campus_Connect/assets/css/sidebar.css">
-    <link rel="stylesheet" href="/Campus_Connect/assets/css/notices.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/board.css">
+    <link rel="stylesheet" href="/Campus_Connect/assets/css/theme.css">
 </head>
 <body>
 
 <div class="cc-layout">
     <?php require_once __DIR__ . "/../includes/sidebar.php"; ?>
 
-    <main class="nt-main">
- <div class="nt-wrap">
-        <div class="nt-header">
-            <div>
-                <h1>Notice board</h1>
-                <p>Announcements from your campus</p>
+    <main class="pb-main">
+        <div class="pb-board">
+
+            <div class="pb-sign">
+                <b>Notice board</b>
+                <span><?php echo $sub; ?></span>
             </div>
 
-            <?php if ($can_post): ?>
-                <a href="/Campus_Connect/notices/create.php" class="nt-post-btn">
-                    <i class="ti ti-plus"></i>Post notice
-                </a>
-            <?php endif; ?>
-        </div>
+            <div class="pb-bar">
+                <div class="pb-tags">
+                    <a href="index.php" class="pb-tag <?php echo $filter === 'All' ? 'on' : ''; ?>"><i class="hole"></i>All</a>
+                    <?php foreach ($categories as $cat): ?>
+                        <a href="index.php?category=<?php echo $cat; ?>" class="pb-tag <?php echo $filter === $cat ? 'on' : ''; ?>">
+                            <i class="hole"></i><?php echo $cat; ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
 
-        <div class="nt-chips">
-            <a href="index.php" class="<?php echo $filter === 'All' ? 'active' : ''; ?>">All</a>
-            <?php foreach ($categories as $cat): ?>
-                <a href="index.php?category=<?php echo $cat; ?>" class="<?php echo $filter === $cat ? 'active' : ''; ?>">
-                    <?php echo $cat; ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
+                <?php if ($can_post): ?>
+                    <a href="/Campus_Connect/notices/create.php" class="pb-post">
+                        <i class="ti ti-plus"></i>Post notice
+                    </a>
+                <?php endif; ?>
+            </div>
 
-        <div class="nt-list">
-            <?php if ($result && $result->num_rows > 0): ?>
-                <?php while ($n = $result->fetch_assoc()): ?>
-                    <?php
-                        $time   = strtotime($n["created_at"]);
-                        $is_new = $time > strtotime("-3 days");
-                        $cat    = $n["category"];
-                        $preview = mb_strimwidth($n["content"], 0, 120, "...");
-                    ?>
-                    <article class="nt-card">
-                        <div class="nt-date cat-<?php echo strtolower($cat); ?>">
-                            <span class="nt-day"><?php echo date("d", $time); ?></span>
-                            <span class="nt-month"><?php echo date("M", $time); ?></span>
-                        </div>
+            <div class="pb-grid">
+                <?php if ($result && $result->num_rows > 0): ?>
+                    <?php $i = 0; ?>
+                    <?php while ($n = $result->fetch_assoc()): ?>
+                        <?php
+                            $i++;
+                            $time    = strtotime($n["created_at"]);
+                            $is_new  = $time > strtotime("-3 days");
+                            $cat     = $n["category"];
+                            $slug    = strtolower($cat);
+                            $preview = mb_strimwidth($n["content"], 0, 120, "...");
+                        ?>
+                        <article class="pb-note pb-<?php echo $slug; ?>">
 
-                        <div class="nt-body">
-                            <div class="nt-title-row">
-                                <h3><?php echo htmlspecialchars($n["title"]); ?></h3>
-                                <?php if ($is_new): ?><span class="nt-new">New</span><?php endif; ?>
-                            </div>
+                            <?php if ($i % 2 === 0): ?>
+                                <span class="pb-tape"></span>
+                            <?php else: ?>
+                                <span class="pb-pin"></span>
+                            <?php endif; ?>
 
-                            <p class="nt-preview"><?php echo htmlspecialchars($preview); ?></p>
+                            <?php if ($is_new): ?><span class="pb-new">NEW</span><?php endif; ?>
 
-                            <details class="nt-more">
+                            <span class="pb-date"><?php echo date("j M", $time); ?></span>
+                            <h3 class="pb-title"><?php echo htmlspecialchars($n["title"]); ?></h3>
+                            <p class="pb-body"><?php echo htmlspecialchars($preview); ?></p>
+
+                            <details class="pb-more">
                                 <summary>Read full notice</summary>
                                 <p><?php echo nl2br(htmlspecialchars($n["content"])); ?></p>
                             </details>
 
-                            <div class="nt-meta">
-                                <span class="nt-cat cat-<?php echo strtolower($cat); ?>-text">
+                            <div class="pb-foot">
+                                <span class="pb-cat">
                                     <i class="ti <?php echo $icons[$cat] ?? 'ti-speakerphone'; ?>"></i><?php echo $cat; ?>
                                 </span>
                                 <span><i class="ti ti-user"></i><?php echo htmlspecialchars($n["full_name"]); ?></span>
-                                 <?php if ($role === "admin"): ?>
-        <form method="POST" action="/Campus_Connect/notices/delete.php" class="nt-delete-form"
-              onsubmit="return confirm('Delete this notice? This cannot be undone.');">
-            <input type="hidden" name="id" value="<?php echo (int) $n["id"]; ?>">
-            <button type="submit" class="nt-delete"><i class="ti ti-trash"></i>Delete</button>
-        </form>
-    <?php endif; ?>
+
+                                <?php if ($role === "admin"): ?>
+                                    <form method="POST" action="/Campus_Connect/notices/delete.php" class="pb-delete-form"
+                                          onsubmit="return confirm('Take this notice down? This cannot be undone.');">
+                                        <input type="hidden" name="id" value="<?php echo (int) $n["id"]; ?>">
+                                        <button type="submit" class="pb-delete"><i class="ti ti-pinned-off"></i>Take down</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
-                        </div>
-                    </article>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <div class="nt-empty">
-                    <i class="ti ti-bell"></i>
-                    <p>No notices here yet.</p>
-                </div>
-            <?php endif; ?>
+
+                        </article>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <div class="pb-empty">
+                        <i class="ti ti-pin"></i>
+                        <p>The board is empty. Nothing pinned up here yet.</p>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         </div>
- </div>
     </main>
 </div>
 
