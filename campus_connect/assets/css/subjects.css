@@ -1,0 +1,254 @@
+/* ===== subject section ===== */
+.sj-section {
+  /* theme colors: change these 4 lines to restyle the whole section */
+  --sj-accent: #6ba313;
+  --sj-dark: #26340f;
+  --sj-soft: #5c7f1e;
+  --sj-all-bg: #e4f4b8;
+  --sj-all-border: #8dbf2f;
+
+  margin-bottom: 32px;
+}
+
+/* teal version (swap the lines above for these):
+  --sj-accent: #3fa796;
+  --sj-dark: #1f5e54;
+  --sj-soft: #2f7a6c;
+  --sj-all-bg: #d9f0eb;
+  --sj-all-border: #8fd3c5;
+*/
+
+.sj-head {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sj-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--sj-soft);
+}
+
+.sj-head h2 {
+  margin: 6px 0 0;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--sj-dark);
+}
+
+.sj-head h2 span {
+  color: var(--sj-accent);
+}
+
+.sj-sub {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--sj-soft);
+}
+
+/* three columns: cards, earth, cards */
+.sj-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* each side is 3 equal-height rows, so everything lines up */
+.sj-col {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sj-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 92px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sj-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sj-card > i {
+  flex-shrink: 0;
+  font-size: 30px;
+}
+
+.sj-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sj-text strong {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sj-text span {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.sj-text em {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 2px 10px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* pastel colors */
+.sj-pink {
+  background: #fde4e4;
+}
+.sj-pink > i,
+.sj-pink em {
+  color: #a32d2d;
+}
+.sj-pink strong {
+  color: #501313;
+}
+.sj-pink span {
+  color: #7a3030;
+}
+
+.sj-yellow {
+  background: #fff1c9;
+}
+.sj-yellow > i,
+.sj-yellow em {
+  color: #854f0b;
+}
+.sj-yellow strong {
+  color: #4a2c05;
+}
+.sj-yellow span {
+  color: #7a5418;
+}
+
+.sj-blue {
+  background: #dcebfb;
+}
+.sj-blue > i,
+.sj-blue em {
+  color: #185fa5;
+}
+.sj-blue strong {
+  color: #0c3a66;
+}
+.sj-blue span {
+  color: #2c5a87;
+}
+
+.sj-purple {
+  background: #e8e0fa;
+}
+.sj-purple > i,
+.sj-purple em {
+  color: #534ab7;
+}
+.sj-purple strong {
+  color: #26215c;
+}
+.sj-purple span {
+  color: #4a4285;
+}
+
+.sj-orange {
+  background: #ffe3cc;
+}
+.sj-orange > i,
+.sj-orange em {
+  color: #b5561a;
+}
+.sj-orange strong {
+  color: #5a2a0a;
+}
+.sj-orange span {
+  color: #8a4a22;
+}
+
+.sj-all {
+  background: var(--sj-all-bg);
+  border: 1.5px dashed var(--sj-all-border);
+}
+
+.sj-all > i,
+.sj-all em {
+  color: var(--sj-dark);
+}
+.sj-all strong {
+  color: var(--sj-dark);
+}
+.sj-all span {
+  color: var(--sj-soft);
+}
+
+/* the earth */
+.sj-mascot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sj-mascot svg {
+  width: 150px;
+  height: auto;
+  animation: sj-float 4s ease-in-out infinite;
+}
+
+.sj-mascot p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--sj-dark);
+}
+
+@keyframes sj-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* tablets and phones: earth on top, cards stacked */
+@media (max-width: 900px) {
+  .sj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sj-mascot {
+    order: -1;
+  }
+
+  .sj-mascot svg {
+    width: 120px;
+  }
+
+  .sj-head h2 {
+    font-size: 24px;
+  }
+}
